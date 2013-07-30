@@ -25,8 +25,8 @@ import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Reducer;
 
-import util.MapIO;
 import util.ReduceIO;
+
 
 
 public class ReduceClass extends Reducer<Text,LongWritable,Text,Mutation> {

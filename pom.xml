@@ -28,12 +28,6 @@
   	</dependency>
   	<dependency>
   		<groupId>org.apache.accumulo</groupId>
-  		<artifactId>accumulo-examples</artifactId>
-  		<version>1.5.0</version>
-  		<type>pom</type>
-  	</dependency>
-  	<dependency>
-  		<groupId>org.apache.accumulo</groupId>
   		<artifactId>wikisearch-ingest</artifactId>
   		<version>1.4.3</version>
   	</dependency>
