@@ -16,8 +16,11 @@
  */
 package simple;
 
+import java.io.IOException;
+
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.conf.Configured;
+import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
@@ -50,7 +53,14 @@ public class Wordcount extends Configured implements Tool {
 
     FileInputFormat.setInputPaths(job, new Path(args[0]));
     FileOutputFormat.setOutputPath(job, new Path(args[1]));
+    
+    deleteOnExists( new Path(args[1]) );
+    
     return job.waitForCompletion(true) ? 0 : 1;
+  }
+  private void deleteOnExists( Path path ) throws IOException {
+    FileSystem fs = FileSystem.get(getConf());
+    if ( fs.exists(path) ){ fs.delete(path, true); }
   }
   
 }
