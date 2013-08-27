@@ -16,7 +16,7 @@
  */
 package simple;
 
-import org.apache.accumulo.core.util.CachedConfiguration;
+import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.conf.Configured;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IntWritable;
@@ -35,7 +35,7 @@ import org.apache.hadoop.util.ToolRunner;
 public class Wordcount extends Configured implements Tool {
   
   public static void main(String[] args) throws Exception {
-    int res = ToolRunner.run( CachedConfiguration.getInstance(), new Wordcount(), args );
+    int res = ToolRunner.run( new Configuration(), new Wordcount(), args );
     System.exit(res);
   }
 
