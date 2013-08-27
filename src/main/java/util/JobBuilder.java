@@ -18,15 +18,15 @@ package util;
 
 import java.io.IOException;
 
-import mapreduce.AccumuloJob;
-import mapreduce.AccumuloJob.JobProperties;
-import mapreduce.MapClass;
-import mapreduce.ReduceClass;
+import map.MapClass;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.mapreduce.InputFormat;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.OutputFormat;
+
+import reduce.ReduceClass;
+import util.AccumuloJob.JobProperties;
 
 /** Wrapper class for the Job class
  * TODO change raw types to generic types */
